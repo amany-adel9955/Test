@@ -81,5 +81,8 @@ code {
 }
 
 .bg-light{
-    background-color: rgb(128, 128, 128) !important
+    background-color: honeydew !important;
+}
+.container{
+    max-width : 1080px !important;
 }

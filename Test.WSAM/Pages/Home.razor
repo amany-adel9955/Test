@@ -1,7 +1,20 @@
 ﻿@page "/"
+@inject IAccountManagement AccountManagement
+@inject NavigationManager Navigation
+@attribute [Authorize]
 
 <PageTitle>Home</PageTitle>
 
 <h1>Hello, world!</h1>
 
 Welcome to your new app.
+
+<button class="btn btn-primary" @onclick="Logout">Logout</button>
+
+@code{
+	private async Task Logout()
+	{
+		await AccountManagement.LogoutAsync();
+		Navigation.NavigateTo(uri: "/login");
+	}
+}
